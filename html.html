@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login Test</title>
+  <script>
+    function login() {
+      const username = prompt("Enter username:");
+      if (!username) {
+        alert("Login cancelled.");
+        return;
+      }
+      const password = prompt("Enter password:");
+      if (!password) {
+        alert("Login cancelled.");
+        return;
+      }
+      if (username === "student" && password === "trex123") {
+        alert(`Welcome, ${username}!`);
+      } else {
+        alert("Invalid username or password.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <button onclick="login()">Login</button>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our School</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #003060;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    section {
+      padding: 30px;
+    }
+
+    h2 {
+      color: #004080;
+    }
+
+    footer {
+      background-color: #004080;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .subjects, .games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .subject, .game {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Popup */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 400px;
+    }
+
+    .popup-content h3 {
+      margin-top: 0;
+    }
+
+    .popup-content button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #004080;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Welcome Popup -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h3>Welcome to Our School Website!</h3>
+      <p>Explore our subjects, sports, and everything we offer.</p>
+      <button onclick="closePopup()">Enter Site</button>
+    </div>
+  </div>
+
+  <header>
+    <h1>Welcome to Our School</h1>
+    <p>Empowering students for the future.</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#subjects">Subjects</a>
+    <a href="#games">Games</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="home">
+    <h2>Home</h2>
+    <p>Our school provides a welcoming environment for learning, development, and fun. Explore everything we offer — from academics to extracurricular activities.</p>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Established in 1995, our school has built a reputation for academic excellence and holistic development. We believe in empowering every student through learning, sports, and leadership opportunities.</p>
+  </section>
+
+  <section id="subjects">
+    <h2>Subjects Offered</h2>
+    <div class="subjects">
+      <div class="subject">Mathematics</div>
+      <div class="subject">English</div>
+      <div class="subject">Science</div>
+      <div class="subject">Social Studies</div>
+      <div class="subject">ICT / Computer Studies</div>
+      <div class="subject">Religious Education</div>
+      <div class="subject">Creative Arts</div>
+      <div class="subject">Physical Education</div>
+    </div>
+  </section>
+
+  <section id="games">
+    <h2>Games & Clubs</h2>
+    <div class="games">
+      <div class="game">Football</div>
+      <div class="game">Basketball</div>
+      <div class="game">Volleyball</div>
+      <div class="game">Table Tennis</div>
+      <div class="game">Debate Club</div>
+      <div class="game">Drama Club</div>
+      <div class="game">Scouting</div>
+      <div class="game">Music & Dance</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Address:</strong> 456 Education Road, City, Country</p>
+    <p><strong>Email:</strong> info@ourschool.edu</p>
+    <p><strong>Phone:</strong> +123 456 7890</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Our School. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+
+    // Optional: Automatically close popup after 5 seconds
+    // setTimeout(closePopup, 5000);
+  </script>
+
+</body>
+</html>

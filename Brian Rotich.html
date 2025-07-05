@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kaplong Boys High School</title>
+<style>
+  /* Reset and basics */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0;
+    background: linear-gradient(to bottom, #fff8dc, #f0e68c);
+    color: #003366;
+  }
+  school-antem {
+    font-style: italic;
+    color: #f3ef0c;
+    font-size: medium;
+  }
+  a {
+    color: #20f031;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  header {
+    background: linear-gradient(to right, #003366, #00509e);
+    color: #20f03c;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    letter-spacing: 3px;
+  }
+  header p {
+    margin: 5px 0 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  nav {
+    background-color: #00509e;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  nav button {
+    background: none;
+    border: none;
+    color: #20f054;
+    padding: 15px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  nav button:hover,
+  nav button.active {
+    background-color: #20f054;
+    color: #003366;
+    font-weight: 700;
+  }
+  main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+  section {
+    display: none;
+  }
+  section.active {
+    display: block;
+  }
+  h2 {
+    color: #00509e;
+    border-bottom: 3px solid #21e031;
+    padding-bottom: 6px;
+    margin-bottom: 15px;
+    font-size: 2rem;
+  }
+  img {
+    max-width: 100%;
+    border-radius: 12px;
+    border: 5px solid #20f031;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  ul {
+    list-style: disc inside;
+    line-height: 1.6;
+    margin-left: 20px;
+  }
+  footer {
+    background: linear-gradient(to right, #003366, #00509e);
+    color: #20f02a;
+    text-align: center;
+    padding: 15px 0;
+    font-weight: 600;
+    margin-top: 50px;
+  }
+  /* Form styles */
+  form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 2px solid #00509e;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+  }
+  form button {
+    background-color: #20f04d;
+    border: none;
+    padding: 12px 20px;
+    font-weight: 700;
+    color: #003366;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  form button:hover {
+    background-color: #19e22a;
+  }
+
+  /* Welcome modal */
+  #welcomeModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom:0;
+    background-color: rgba(236, 215, 24, 0.904);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  #welcomeModal .modal-content {
+    background-color: #3bd30c00;
+    padding: 30px 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 450px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  }
+  #welcomeModal h2 {
+    color: #003366;
+    margin-bottom: 15px;
+  }
+  #welcomeModal p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+  }
+  #welcomeModal button {
+    background-color: #00509e;
+    color: #20f031;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  #welcomeModal button:hover {
+    background-color: #003366;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    nav button {
+      padding: 10px 12px;
+      font-size: 0.9rem;
+    }
+    header h1 {
+      font-size: 2rem;
+      letter-spacing: 2px;
+    }
+    header p {
+      font-size: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Kaplong Boys High School</h1>
+  <p>Excellence in Education, Discipline, and Integrity</p>
+</header>
+
+<nav id="navBar">
+  <button class="active" data-target="home">Home</button>
+  <button data-target="about">About</button>
+  <button data-target="academics">Academics</button>
+  <button data-target="admissions">Admissions</button>
+  <button data-target="staff">Staff</button>
+  <button data-target="students">Students</button>
+  <button data-target="gallery">Gallery</button>
+  <button data-target="news">News</button>
+  <button data-target="contact">Contact</button>
+</nav>
+
+<main>
+  <section id="home" class="active">
+    <h2>Welcome to Kaplong Boys High School</h2>
+    <p>Excellence in Education, Discipline, and Integrity.</p>
+    <img src="https://via.placeholder.com/800x400?text=Kaplong+School+Campus" alt="School Campus" />
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Kaplong Boys High School is committed to academic excellence, integrity, and the holistic development of every student. Established in 1985, the school continues to be a beacon of discipline and innovation.</p>
+    <img src="https://via.placeholder.com/800x400?text=School+History" alt="School History" />
+  </section>
+
+  <section id="academics">
+    <h2>Academics</h2>
+    <ul>
+      <li>Mathematics Department</li>
+      <li>Science Department</li>
+      <li>Languages Department</li>
+      <li>Humanities Department</li>
+      <li>Technical Subjects</li>
+    </ul>
+    <img src="https://via.placeholder.com/800x400?text=Academic+Departments" alt="Academic Departments" />
+  </section>
+
+  <section id="admissions">
+    <h2>Admissions</h2>
+    <p>We admit students based on merit, discipline, and recommendations. Download our admission form below.</p>
+    <a href="#" download="admission-form.pdf">Download Admission Form</a>
+  </section>
+
+  <section id="staff">
+    <h2>Staff</h2>
+    <p>Our dedicated staff includes over 50 qualified teachers and administrators.</p>
+    <img src="https://via.placeholder.com/800x400?text=School+Staff" alt="School Staff" />
+  </section>
+
+  <section id="students">
+    <h2>Students</h2>
+    <p>Clubs, prefects, sports teams, and achievements are all part of student life.</p>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+      <img src="https://via.placeholder.com/350x200?text=Image+1" alt="Gallery Image 1" style="border: 4px solid #f0c420; border-radius: 10px;" />
+      <img src="https://via.placeholder.com/350x200?text=Image+2" alt="Gallery Image 2" style="border: 4px solid #f0c420; border-radius: 10px;" />
+      <img src="https://via.placeholder.com/350x200?text=Image+3" alt="Gallery Image 3" style="border: 4px solid #f0c420; border-radius: 10px;" />
+      <img src="https://via.placeholder.com/350x200?text=Image+4" alt="Gallery Image 4" style="border: 4px solid #f0c420; border-radius: 10px;" />
+    </div>
+  </section>
+
+  <section id="news">
+    <h2>News & Events</h2>
+    <ul>
+      <li>Term 2 Opening Date – June 3rd</li>
+      <li>Science Fair – July 15th</li>
+      <li>Parents Meeting – August 5th</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <marquee>&copy; <span id="year"></span> Kaplong Boys High School. All Rights Reserved.Developed by SHECKLER BETT</marquee>
+</footer>
+
+<!-- Welcome Modal -->
+<div id="welcomeModal">
+  <div class="modal-content">
+    <h2>Welcome to Kaplong Boys High School!</h2>
+    <p>Excellence in Education, Discipline, and Integrity.</p>
+    <P>School of choice</P>
+    <p>we soldier on</p>
+    <p>in God we trust</p>
+    <button id="closeWelcome">Enter Site</button>
+  </div>
+</div>
+
+<script>
+  // Navigation button clicks show sections
+  const navButtons = document.querySelectorAll('nav button');
+  const sections = document.querySelectorAll('main section');
+
+  navButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active class from all buttons and sections
+      navButtons.forEach(btn => btn.classList.remove('active'));
+      sections.forEach(sec => sec.classList.remove('active'));
+      
+      // Add active class to clicked button and related section
+      button.classList.add('active');
+      document.getElementById(button.dataset.target).classList.add('active');
+    });
+  });
+
+  // Welcome modal logic - show once per session
+  const welcomeModal = document.getElementById('welcomeModal');
+  const closeBtn = document.getElementById('closeWelcome');
+
+  if (sessionStorage.getItem('welcomeShown')) {
+    welcomeModal.style.display = 'none';
+  }
+
+  closeBtn.addEventListener('click', () => {
+    welcomeModal.style.display = 'none';
+    sessionStorage.setItem('welcomeShown', 'true');
+  });
+
+  // Footer year auto update
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Simple form submit handler (just prevents default and alerts)
+  const contactForm = document.getElementById('contactForm');
+  contactForm.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Thank you for your message! We will get back to you shortly.');
+    contactForm.reset();
+  });
+</script>
+
+</body>
+</html>

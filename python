@@ -1,0 +1,44 @@
+function calculateFinalGrade(assignments, tests, exams) {
+    const weightAssignments = 0.4;
+    const weightTests = 0.3;
+    const weightExams = 0.3;
+
+    return (assignments * weightAssignments) +
+           (tests * weightTests) +
+           (exams * weightExams);
+}
+
+function getLetterGrade(finalGrade) {
+    if (finalGrade >= 90) {
+        return "A";
+    } else if (finalGrade >= 80) {
+        return "B";
+    } else if (finalGrade >= 70) {
+        return "C";
+    } else if (finalGrade >= 60) {
+        return "D";
+    } else {
+        return "F";
+    }
+}
+
+function main() {
+    alert("Welcome to the Student Grade Calculator!");
+
+    let assignments = parseFloat(prompt("Enter your average score for assignments (0-100): "));
+    let tests = parseFloat(prompt("Enter your average score for tests (0-100): "));
+    let exams = parseFloat(prompt("Enter your exam score (0-100): "));
+
+    if (isNaN(assignments) || isNaN(tests) || isNaN(exams)) {
+        alert("Please enter valid numbers!");
+        return;
+    }
+
+    let finalGrade = calculateFinalGrade(assignments, tests, exams);
+    let letterGrade = getLetterGrade(finalGrade);
+
+    alert(`Your final weighted grade is: ${finalGrade.toFixed(2)}\nYour letter grade is: ${letterGrade}`);
+}
+
+// Run the program
+main();
